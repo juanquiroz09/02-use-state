@@ -11,14 +11,17 @@ const MiPrimerEstado = () => {
     */
    const [nombre, setNombre] = useState("Juan Quiroz");
    const cambiarNombre = (e,nameDefault) => {
-    setNombre("Elias")
+    setNombre(nameDefault);
+    console.log(e.target.value)
 };
   return (
     <div>
         <h3>Componente mi primer estado</h3>
         <strong>{nombre}</strong>
         &nbsp;
-        <button onClick={cambiarNombre}>Cambiar</button>
+        <button onClick= {e => {cambiarNombre(e, "Eloy")}}>Cambiar a Eloy</button>
+        &nbsp;
+        <input type="text" onKeyUp={ e => {cambiarNombre(e, e.target.value)}} />
     </div>
   )
 }
