@@ -10,18 +10,21 @@ const MiPrimerEstado = () => {
     };
     */
    const [nombre, setNombre] = useState("Juan Quiroz");
-   const cambiarNombre = (e,nameDefault) => {
+   const cambiarNombre = (nameDefault) => {
     setNombre(nameDefault);
-    console.log(e.target.value)
 };
   return (
     <div>
         <h3>Componente mi primer estado</h3>
-        <strong>{nombre}</strong>
+        <h1>Mi nombre es: <strong className={nombre.length >= 4 ? 'green' : 'red'}>{nombre}</strong></h1>
         &nbsp;
-        <button onClick= {e => {cambiarNombre(e, "Eloy")}}>Cambiar a Eloy</button>
+        <input type="text" onChange={ e => cambiarNombre(e.target.value)} placeholder="Ingresa el nombre" />
         &nbsp;
-        <input type="text" onKeyUp={ e => {cambiarNombre(e, e.target.value)}} />
+        <button onClick={ e => {
+          console.log("El valor guardado en tu estado es: " + nombre)
+        }}>Mostrar Valor por Consola</button>
+        &nbsp;     
+        <button onClick={ e => cambiarNombre(nombre)}>Cambiar Nombre</button>
     </div>
   )
 }
