@@ -37,6 +37,18 @@
   color: #61dafb;
 }
 
+.label{
+  background-color: lightblue;
+  border-radius: 5px;
+  padding: 5px;
+  color: #4444;
+}
+
+.label-green{
+  background-color: green;
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
